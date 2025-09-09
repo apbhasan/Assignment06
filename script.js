@@ -1,12 +1,9 @@
-// script.js - beginner friendly, commented
-
-// API endpoints
 const API_BASE = "https://openapi.programming-hero.com/api";
 const CATEGORIES_ENDPOINT = `${API_BASE}/categories`;
 const CATEGORY_BY_ID = id => `${API_BASE}/category/${id}`;
 const PLANT_BY_ID = id => `${API_BASE}/plant/${id}`;
 
-// DOM refs
+
 const categoriesList = document.getElementById('categories-list');
 const cardsGrid = document.getElementById('cards-grid');
 const spinner = document.getElementById('spinner');
@@ -17,14 +14,12 @@ const modalBody = document.getElementById('modal-body');
 const modalClose = document.getElementById('modal-close');
 
 let activeCategoryBtn = null;
-let cart = new Map(); // key: plant id, value: {id, name, price, qty}
-
-// Helper: show spinner
+let cart = new Map(); 
 function showSpinner(show = true){
   spinner.classList.toggle('hidden', !show);
 }
 
-// Defensive helper: extract the first array from a JSON response
+
 function findArrayInResponse(json){
   if (!json) return [];
   if (Array.isArray(json)) return json;
@@ -34,12 +29,12 @@ function findArrayInResponse(json){
   return [];
 }
 
-// Format price
+
 function formatPrice(n){
   return `৳${n}`;
 }
 
-// Load categories and render buttons
+
 async function loadCategories(){
   showSpinner(true);
   try {
@@ -78,7 +73,7 @@ async function loadCategories(){
   }
 }
 
-// When category clicked
+
 async function onCategoryClick(btn, id){
   if (activeCategoryBtn) activeCategoryBtn.classList.remove('active');
   btn.classList.add('active');
@@ -87,10 +82,10 @@ async function onCategoryClick(btn, id){
   await loadTreesForCategory(id);
 }
 
-// Load trees for a category id (or 'all')
+
 async function loadTreesForCategory(id){
   showSpinner(true);
-  cardsGrid.innerHTML = ''; // clear grid
+  cardsGrid.innerHTML = ''; 
 
   try {
     let url = id === 'all' ? `${API_BASE}/plants` : CATEGORY_BY_ID(id);
@@ -141,7 +136,7 @@ async function loadTreesForCategory(id){
   }
 }
 
-// Add to cart
+
 function addToCart(item){
   if (!item.id) return;
   const existing = cart.get(item.id);
@@ -150,21 +145,20 @@ function addToCart(item){
   
   renderCart();
 
-  // Alert message
   alert(`🌳 "${item.name}" added to cart!`);
 }
 
 
 
 
-// Remove from cart
+
 function removeFromCart(id){
   if (!cart.has(id)) return;
   cart.delete(id);
   renderCart();
 }
 
-// Render cart
+
 function renderCart(){
   cartItemsEl.innerHTML = '';
   if (cart.size === 0){
@@ -191,7 +185,6 @@ function renderCart(){
   cartTotalEl.textContent = formatPrice(total);
 }
 
-// Modal open - fetch plant detail
 async function openModalWithPlant(id){
   if (!id){
     modalBody.innerHTML = `<p>No details available</p>`;
@@ -199,7 +192,7 @@ async function openModalWithPlant(id){
     return;
   }
 
-  // Show spinner instead of "Loading..."
+  
   modalBody.innerHTML = `<div class="spinner"></div>`;
   modal.classList.remove('hidden');
 
@@ -260,13 +253,13 @@ async function openModalWithPlant(id){
   }
 }
 
-// Modal close
+
 modalClose.addEventListener('click', () => modal.classList.add('hidden'));
 modal.addEventListener('click', e => {
   if (e.target === modal) modal.classList.add('hidden');
 });
 
-// Donate form
+
 document.getElementById('donate-form').addEventListener('submit', (e) => {
   e.preventDefault();
   const name = document.getElementById('donor-name').value.trim();
@@ -280,6 +273,5 @@ document.getElementById('donate-form').addEventListener('submit', (e) => {
   e.target.reset();
 });
 
-// Initialize
 loadCategories();
 renderCart();
