@@ -1,4 +1,4 @@
-/* General */ 
+ 
 body { font-family: Arial, sans-serif; margin:0; padding:0; }
 .navbar { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#2e7d32; color:white; flex-wrap:wrap; }
 .navbar .menu { list-style:none; display:flex; gap:20px; }
@@ -8,7 +8,7 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; }
 .banner-content h1 { font-size:2rem; margin-bottom:10px; }
 .banner-content p { margin-bottom:15px; }
 
-/* Banner */
+
 .banner {
   position: relative;
   text-align: center;
@@ -17,7 +17,7 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; }
   overflow: hidden;
 }
 
-/* Banner leaf images */
+
 .banner-leaf {
   position: absolute;
   width: 420px;
@@ -35,7 +35,7 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; }
 .banner-content h1 { font-size: 2rem; margin-bottom: 10px; }
 .banner-content p { margin-bottom: 15px; }
 
-/* Shop Section */
+
 .shop { display:flex; gap:20px; padding:20px; justify-content: center; }
 .sidebar { width:220px; background:#f4f4f4; padding:15px; border-radius:8px; }
 .sidebar button { width:100%; padding:8px; margin:5px 0; border:none; border-radius:4px; cursor:pointer; background:#f4f4f4; text-align:left; transition:background 0.2s; }
@@ -59,7 +59,7 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; }
   text-align: center;
 }
 
-/* Cart Sidebar */
+
 .cart { width:250px; background:#f4f4f4; padding:35px; border-radius:8px; height:fit-content; }
 .cart h3 { margin-top:0; }
 .cart-item { display:flex; justify-content:space-between; margin-bottom:8px; }
@@ -67,7 +67,7 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; }
 .cart-item .qty { font-size:12px; color:#555; }
 .cart-item button.remove { background:transparent; border:none; cursor:pointer; color:#b33; font-size:16px; }
 
-/* Spinner */
+
 .spinner {
   position: fixed;
   top: 50%;
@@ -87,52 +87,52 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; }
 }
 .spinner.hidden { display: none; }
 
-/* Modal */
+
 .modal { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; z-index:999; }
 .modal.hidden { display:none; }
 .modal-content { background:#fff; padding:20px; border-radius:8px; width:500px; max-width:95%; max-height:90%; overflow-y:auto; position:relative; }
 .close { position:absolute; top:10px; right:14px; font-size:22px; cursor:pointer; }
 
-/* About */
+
 .about { padding:40px 20px; text-align:center; }
 .about-container { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:20px; }
 .about-img img { width:300px; border-radius:10px; }
 .about-content { max-width:500px; text-align:left; }
 .about-list li { margin-bottom:5px; }
 
-/* Impact */
+
 .impact { background:#f1f8e9; padding:60px 20px; text-align:center; }
 .impact h2 { margin-bottom:40px; font-size:2rem; color:black; }
 .impact-cards { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
 .impact-cards .card { background:white; padding:50px 40px; min-width:250px; border-radius:15px; font-size:22px; cursor:pointer; box-shadow:0 6px 15px rgba(0,0,0,0.2); transition: transform 0.2s, box-shadow 0.2s; }
 .impact-cards .card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.3); }
 
-/* Donate Section */
+
 .donate { text-align:center; padding:40px; background:#2e7d32; color:white; }
 .donate form { display:flex; flex-direction:column; gap:10px; max-width:300px; margin:auto; }
 .donate input, .donate select { padding:10px; border:none; border-radius:5px; }
 
-/* Footer */
+
 footer { background:#1b5e20; color:white; text-align:center; padding:10px; }
 
-/* Responsive */
+
 @media(max-width:1024px){
   .card-grid { grid-template-columns:repeat(2,1fr); }
 }
 @media(max-width:768px){
 
-  /* Navbar mobile fix */
+  
   .navbar { flex-direction:column; text-align:center; gap:10px; }
   .navbar h1, .navbar .logo { margin-bottom:10px; }
   .navbar .menu { flex-direction:column; gap:10px; margin-bottom:10px; justify-content:center; }
   .navbar .btn { margin-top:10px; }
 
-  /* Shop Layout */
+ 
   .shop { flex-direction:column; align-items:center; }
   .sidebar, .main-content, .cart { width:100%; }
   .card-grid { grid-template-columns:1fr; }
 
-  /* About, Impact, Donate (Plant a Tree) */
+  
   .about-container,
   .impact-cards,
   .donate form {
@@ -146,7 +146,7 @@ footer { background:#1b5e20; color:white; text-align:center; padding:10px; }
     text-align:center;
   }
 
-  /* Buttons centered below */
+  
   .about-content .btn,
   .impact .btn,
   .donate button {
